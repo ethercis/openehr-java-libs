@@ -1,0 +1,15 @@
+# Please add your platform specific files (.idea, *.iml, etc) to your
+# global gitignore:
+# https://help.github.com/articles/ignoring-files/#create-a-global-gitignore
+
+# mvn test/build artifacts
+target/
+dadl-binding/tree_2_slots.dadl
+oet-parser/term_map.txt
+oet-parser/test_paths.txt
+rm-skeleton/hypersensitivity_max.dadl
+rm-skeleton/hypersensitivity_min.dadl
+
+# mvn versions:set
+pom.xml.versionsBackup
+
