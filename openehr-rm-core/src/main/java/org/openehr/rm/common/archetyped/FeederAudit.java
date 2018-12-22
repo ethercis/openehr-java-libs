@@ -20,6 +20,8 @@ import java.util.List;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.openehr.rm.Attribute;
+import org.openehr.rm.FullConstructor;
 import org.openehr.rm.RMObject;
 import org.openehr.rm.datatypes.basic.DvIdentifier;
 import org.openehr.rm.datatypes.encapsulated.DvEncapsulated;
@@ -37,19 +39,21 @@ public final class FeederAudit extends RMObject {
      * Constrcuts a FeederAuditDetails
      *
      * @param originatingSystemAudit		not null
-     * @param originatingSystemItemIds 	null if not specified
+     * @param originatingSystemItemIDs 	null if not specified
      * @param feederSystemAudit			null if not specified
-     * @param feederSystemItemIds		null if not specified
+     * @param feederSystemItemIDs		null if not specified
      * @param originalContent			null if not specified
      * 
      * @throws IllegalArgumentException if originatingSystemAudit null,
      * 	originatingSystemItemIds or feederSystemItemIds empty
      */
-    public FeederAudit(FeederAuditDetails originatingSystemAudit,
-    		List<DvIdentifier> originatingSystemItemIDs,
-    		FeederAuditDetails feederSystemAudit,
-    		List<DvIdentifier> feederSystemItemIDs,
-    		DvEncapsulated originalContent) {
+    @FullConstructor
+    public FeederAudit(
+            @Attribute(name = "originatingSystemAudit") FeederAuditDetails originatingSystemAudit,
+            @Attribute(name = "originatingSystemItemIDs") List<DvIdentifier> originatingSystemItemIDs,
+            @Attribute(name = "feederSystemAudit") FeederAuditDetails feederSystemAudit,
+            @Attribute(name = "feederSystemItemIDs") List<DvIdentifier> feederSystemItemIDs,
+            @Attribute(name = "originalContent") DvEncapsulated originalContent) {
         if (originatingSystemAudit == null) {
             throw new IllegalArgumentException("null originatingSystemAudit");
         }

@@ -22,6 +22,7 @@ import org.openehr.rm.Attribute;
 import org.openehr.rm.FullConstructor;
 import org.openehr.rm.RMObject;
 import org.openehr.rm.common.archetyped.Archetyped;
+import org.openehr.rm.common.archetyped.FeederAudit;
 import org.openehr.rm.common.archetyped.Locatable;
 import org.openehr.rm.common.changecontrol.Contribution;
 import org.openehr.rm.common.changecontrol.OriginalVersion;
@@ -151,7 +152,7 @@ public class RMObjectBuilder {
 				Action.class,          Activity.class,        Evaluation.class,      ISMTransition.class,
 				Instruction.class,     InstructionDetails.class, Observation.class,  AdminEntry.class,
 				Section.class,         Composition.class,     EventContext.class,    EHRStatus.class,
-				EHR.class, EHRAccess.class,
+				EHR.class, EHRAccess.class, FeederAudit.class,
 				
 				// demographic classes
 				Address.class,         PartyIdentity.class,   Agent.class,           Group.class,
