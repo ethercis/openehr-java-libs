@@ -19,6 +19,8 @@ package org.openehr.rm.common.archetyped;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.openehr.rm.Attribute;
+import org.openehr.rm.FullConstructor;
 import org.openehr.rm.RMObject;
 import org.openehr.rm.common.generic.PartyIdentified;
 import org.openehr.rm.common.generic.PartyProxy;
@@ -45,9 +47,14 @@ public final class FeederAuditDetails extends RMObject {
      * @param versionId		   null if not present
      * @throws IllegalArgumentException if systemId is null or empty
      */
-    public FeederAuditDetails(String systemID, PartyIdentified provider,
-    		PartyIdentified location, DvDateTime time, PartyProxy subject,
-    		String versionID) {
+    @FullConstructor
+    public FeederAuditDetails(
+            @Attribute(name = "systemId") String systemID,
+            @Attribute(name = "provider") PartyIdentified provider,
+            @Attribute(name = "location") PartyIdentified location,
+            @Attribute(name = "time") DvDateTime time,
+            @Attribute(name = "subject") PartyProxy subject,
+            @Attribute(name = "versionId") String versionID) {
         if (StringUtils.isEmpty(systemID)) {
             throw new IllegalArgumentException("null or empty systemId");
         }
